@@ -1,6 +1,6 @@
 name: ss_pretty_log
 description: A Pretty Log For Android And iOS
-version: 0.0.1
+version: 0.0.3
 homepage: https://github.com/wangweilucky/ss_pretty_log.git
 
 environment:
@@ -37,6 +37,7 @@ flutter:
       android:
         package: com.example.ss_pretty_log
         pluginClass: SsPrettyLogPlugin
+
       ios:
         pluginClass: SsPrettyLogPlugin
 

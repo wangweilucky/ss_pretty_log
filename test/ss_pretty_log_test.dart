@@ -10,6 +10,11 @@ class MockSsPrettyLogPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  void logDebug(String string) {
+    // TODO: implement logDebug
+  }
 }
 
 void main() {

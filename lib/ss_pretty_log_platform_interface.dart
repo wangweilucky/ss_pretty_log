@@ -26,4 +26,7 @@ abstract class SsPrettyLogPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+  Future<String?> logDebug(Map<String, String> args) {
+    throw UnimplementedError('logDebug() has not been implemented.');
+  }
 }

@@ -14,4 +14,10 @@ class MethodChannelSsPrettyLog extends SsPrettyLogPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<String?> logDebug(Map<String, String> args) async {
+    final msg = await methodChannel.invokeMethod<String>('logDebug', args);
+    return msg;
+  }
 }

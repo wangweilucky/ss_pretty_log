@@ -7,6 +7,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import com.orhanobut.logger.*;
 
 /** SsPrettyLogPlugin */
 public class SsPrettyLogPlugin implements FlutterPlugin, MethodCallHandler {
@@ -20,13 +21,18 @@ public class SsPrettyLogPlugin implements FlutterPlugin, MethodCallHandler {
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "ss_pretty_log");
     channel.setMethodCallHandler(this);
+    Logger.addLogAdapter(new AndroidLogAdapter());
   }
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
+    } else if (call.method.equals("logDebug")) {
+      String msg = call.argument("msg");
+      Logger.d(msg);
+      result.success("");
+    }  else {
       result.notImplemented();
     }
   }

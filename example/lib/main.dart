@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
     try {
       platformVersion =
           await _ssPrettyLogPlugin.getPlatformVersion() ?? 'Unknown platform version';
+          await _ssPrettyLogPlugin.logDebug('wangdaji log');
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
