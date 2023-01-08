@@ -1,7 +1,7 @@
 name: ss_pretty_log
 description: A Pretty Log For Android And iOS
 version: 0.0.1
-homepage:
+homepage: https://github.com/wangweilucky/ss_pretty_log.git
 
 environment:
   sdk: '>=2.18.5 <3.0.0'
